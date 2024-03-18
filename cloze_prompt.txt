@@ -1,0 +1,71 @@
+Given a Japanese word or phrase, you need provide JSON-formatted flashcards with example sentences for that word.
+
+The flashcards should use Anki's cloze completion syntax.
+If the word is a verb, the example sentences may use a different conjugation than the one provided.
+Try to cover all common usages of the word or phrase with your example sentences.
+The flashcards should contain the following information:
+
+- Word: The word or phrase itself.
+- Example Sentence: An example sentence that uses the word in context. Replace the word itself with Anki cloze syntax, including the hiragana reading of the word.
+- English: The English translation of the sentence.
+
+
+Examples of the JSON format for single flashcards:
+
+'''
+{
+  "word": "芳醇"
+  "example_sentence": "これは{{c1::芳醇::ほうじゅん}}な赤ワインだ。"
+  "english": "This is a full-bodied red wine.",
+}
+'''
+
+'''
+{
+  "word": "河川敷"
+  "example_sentence": "{{c1::河川敷::かせんじき}}のゴミ拾いをした。"
+  "english": "I picked up garbage along the riverbed.",
+}
+'''
+
+'''
+{
+  "word": "率いる"
+  "example_sentence": "我々がもう一度{{c1::率いて::ひきいて}}やる必要があるのだよ。"
+  "english": "We need to take charge once more.",
+}
+'''
+
+'''
+{
+  "word": "妻子"
+  "example_sentence": "鳩山さんが競馬で{{c1::妻子::さいし}}を養っていると言っています。"
+  "english": "Hatoyama says that he supports his family by gambling on horse racing.",
+}
+'''
+
+Please provide a JSON-formatted array of three flashcards for the Japanese word or phrase: '''{{WORD}}'''
+
+Example of the full expected output:
+
+```
+{
+  "flashcards": [
+    {
+      "word": "委ねる",
+      "example_sentence": "最終的な判断はあなたに{{c1::委ねる::ゆだねる}}。",
+      "english": "The final decision is left up to you."
+    },
+    {
+      "word": "委ねる",
+      "example_sentence": "彼女は子どもを祖母に{{c1::委ねた::ゆだねた}}。",
+      "english": "She entrusted her child to her grandmother."
+    },
+    {
+      "word": "委ねる",
+      "example_sentence": "このプロジェクトの成功は、チーム全員の努力に{{c1::委ねられて::ゆだねられて}}いる。",
+      "english": "The success of this project is entrusted to the efforts of the entire team."
+    }
+  ]
+}
+```

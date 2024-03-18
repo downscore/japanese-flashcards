@@ -1,0 +1,25 @@
+{
+  "outline.showVariables": false,
+  "outline.showConstants": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    // Enabling coverage here causes problems with discovery (empty coverage report) and debugging (no breakpoints).
+  ],
+  // TODO: Uncomment when tests are available.
+  // "multiCommand.commands": [
+  //   {
+  //     // Command for running tests with coverage every time we save. Uses a task to run the tests in the terminal.
+  //     "command": "multiCommand.saveAndTest",
+  //     "sequence": [
+  //       "workbench.action.files.save",
+  //       // Watch in coverage-gutters needs to be manually activated every time VS Code opens. Doing it here so it
+  //       // happens "automatically", but this may slow down saving in a large project.
+  //       "coverage-gutters.watchCoverageAndVisibleEditors",
+  //       {
+  //         "command": "workbench.action.tasks.runTask",
+  //         "args": "pytest with coverage"
+  //       },
+  //     ]
+  //   }
+  // ],
+}
