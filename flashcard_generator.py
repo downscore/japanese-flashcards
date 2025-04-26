@@ -4,6 +4,7 @@ import concurrent.futures
 import json
 import os
 import random
+
 from anki.collection import Collection
 from anki.notes import Note
 from openai import OpenAI
@@ -83,7 +84,7 @@ def _request_flashcards_from_llm(word: str):
 
   # Send the prompt to the API.
   client = OpenAI()
-  completion = client.chat.completions.create(model="gpt-4-turbo-preview",
+  completion = client.chat.completions.create(model="gpt-4o",
                                               response_format={"type": "json_object"},
                                               messages=[{
                                                   "role": "system",
